@@ -4,7 +4,6 @@ var ProgressBar = require('progress')
 
 var util = require('../test/util')
 var implementations = {
-  bindings: require('../bindings'),
   secp256k1js: require('../js'),
   elliptic: require('../elliptic'),
   ecdsa: require('./ecdsa')

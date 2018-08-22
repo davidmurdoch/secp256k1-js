@@ -1,12 +1,12 @@
 # secp256k1-node
 
-Version | Mac/Linux | Windows
-------- | --------- | -------
-[![NPM Package](https://img.shields.io/npm/v/secp256k1.svg?style=flat-square)](https://www.npmjs.org/package/secp256k1) | [![Build Status](https://img.shields.io/travis/cryptocoinjs/secp256k1-node.svg?branch=master&style=flat-square)](https://travis-ci.org/cryptocoinjs/secp256k1-node) | [![AppVeyor](https://img.shields.io/appveyor/ci/fanatid/secp256k1-node.svg?branch=master&style=flat-square)](https://ci.appveyor.com/project/fanatid/secp256k1-node)
+Version
+-------
+[![NPM Package](https://img.shields.io/npm/v/secp256k1.svg?style=flat-square)](https://www.npmjs.org/package/secp256k1)
 
 [![js-standard-style](https://cdn.rawgit.com/feross/standard/master/badge.svg)](https://github.com/feross/standard)
 
-This module provides native bindings to [bitcoin-core/secp256k1](https://github.com/bitcoin-core/secp256k1). In browser [elliptic](https://github.com/indutny/elliptic) will be used.
+[cryptocoinjs/secp256k1-node](https://github.com/cryptocoinjs/secp256k1-node#secp256k1-node)'s browser implementation (uses [elliptic](https://github.com/indutny/elliptic) will be used).
 
 This library is experimental, so use at your own risk. Works on node version 4.0.0 or greater.
 
@@ -14,49 +14,23 @@ This library is experimental, so use at your own risk. Works on node version 4.0
 
 ##### from npm
 
-`npm install secp256k1`
+`npm install secp256k1-js`
 
 ##### from git
 
 ```
-git clone git@github.com:cryptocoinjs/secp256k1-node.git
-cd secp256k1-node
-git submodule update --init
+git clone git@github.com:davidmurdoch/secp256k1-js.git
+cd secp256k1-js
 npm install
 ```
-
-##### Windows
-
-The easiest way to build the package on windows is to install [windows-build-tools](https://github.com/felixrieseberg/windows-build-tools).
-
-Or install the following software:
-
-  * Git: https://git-scm.com/download/win
-  * nvm: https://github.com/coreybutler/nvm-windows
-  * Python 2.7: https://www.python.org/downloads/release/python-2712/
-  * Visual C++ Build Tools: http://landinghub.visualstudio.com/visual-cpp-build-tools (Custom Install, and select both Windows 8.1 and Windows 10 SDKs)
-
-And run commands:
-
-```
-npm config set msvs_version 2015 --global
-npm install npm@next -g
-```
-
-Based on:
-
-  * https://github.com/nodejs/node-gyp/issues/629#issuecomment-153196245
-  * https://github.com/nodejs/node-gyp/issues/972
 
 ## Usage
 
 * [API Reference (v3.x)](https://github.com/cryptocoinjs/secp256k1-node/blob/master/API.md)
-* [API Reference (v2.x)](https://github.com/cryptocoinjs/secp256k1-node/blob/v2.x/API.md)
 
 ```js
 const { randomBytes } = require('crypto')
 const secp256k1 = require('secp256k1')
-// or require('secp256k1/elliptic')
 //   if you want to use pure js implementation in node
 
 // generate message to sign

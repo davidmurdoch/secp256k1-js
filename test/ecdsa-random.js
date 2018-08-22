@@ -2,7 +2,6 @@
 var assert = require('assert')
 var getRandomBytes = require('crypto').randomBytes
 
-var bindings = require('../bindings')
 var secp256k1js = require('../js')
 var util = require('./util')
 
@@ -22,8 +21,8 @@ while (repeat > 0) {
     var message = util.getMessage()
     var privateKey = util.getPrivateKey()
     try {
-      var publicKey = bindings.publicKeyCreate(privateKey)
-      var expected = bindings.sign(message, privateKey)
+      var publicKey = secp256k1js.publicKeyCreate(privateKey)
+      var expected = secp256k1js.sign(message, privateKey)
 
       var sigObj = secp256k1js.sign(message, privateKey)
       assert.same(sigObj.signature, expected.signature)

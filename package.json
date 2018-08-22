@@ -1,15 +1,16 @@
 {
-  "name": "secp256k1",
-  "version": "3.5.2",
-  "description": "This module provides native bindings to ecdsa secp256k1 functions",
+  "name": "secp256k1-js",
+  "version": "0.0.1",
+  "description": "This module provides a pure js implementation of secp256k1-node",
   "keywords": [
     "ec",
     "ecdh",
     "ecdsa",
-    "secp256k1"
+    "secp256k1",
+    "secp256k1-js"
   ],
   "bugs": {
-    "url": "https://github.com/cryptocoinjs/secp256k1-node/issues"
+    "url": "https://github.com/davidmurdoch/secp256k1-js/issues"
   },
   "license": "MIT",
   "author": "Martin Becze <mjbecze@gmail.com>",
@@ -18,47 +19,41 @@
     "Ian Matyssik (https://github.com/phpb-com)",
     "Kagami Hiiragi <kagami@genshiken.org> (http://kagami.genshiken.org/)",
     "ethers (https://github.com/ethers)",
-    "Kirill Fomichev <fanatid@ya.ru> (https://github.com/fanatid)"
+    "Kirill Fomichev <fanatid@ya.ru> (https://github.com/fanatid)",
+    "David Murdoch <https://github.com/davidmurdoch>"
   ],
   "files": [
     "lib",
-    "src",
     "API.md",
-    "binding.gyp",
-    "bindings.js",
     "elliptic.js",
     "index.js",
-    "js.js",
-    "utils/has_lib.sh"
+    "js.js"
   ],
   "main": "./index.js",
   "repository": {
     "type": "git",
-    "url": "https://github.com/cryptocoinjs/secp256k1-node.git"
+    "url": "https://github.com/davidmurdoch/secp256k1-js.git"
   },
   "scripts": {
-    "coverage": "RANDOM_TESTS_REPEAT=1 nyc tape test/index.js",
+    "coverage": "cross-env RANDOM_TESTS_REPEAT=1 nyc tape test/index.js",
     "coverage-lcov": "npm run coverage && nyc report -r lcov",
-    "install": "npm run rebuild || echo \"Secp256k1 bindings compilation fail. Pure JS implementation will be used.\"",
     "lint": "standard",
-    "rebuild": "node-gyp rebuild",
     "test": "npm run lint && npm run unit",
     "test:browser": "karma start karma.conf.js",
     "unit": "tape test/index.js"
   },
   "dependencies": {
-    "bindings": "^1.2.1",
     "bip66": "^1.1.3",
     "bn.js": "^4.11.3",
     "create-hash": "^1.1.2",
     "drbg.js": "^1.0.1",
     "elliptic": "^6.2.3",
-    "nan": "^2.2.1",
     "safe-buffer": "^5.1.0"
   },
   "devDependencies": {
     "bignum": "^0.13.0",
     "browserify": "^14.4.0",
+    "cross-env": "5.2.0",
     "karma": "^1.3.0",
     "karma-browserify": "^5.0.4",
     "karma-chrome-launcher": "^2.0.0",
@@ -66,16 +61,15 @@
     "karma-env-preprocessor": "^0.1.1",
     "karma-firefox-launcher": "^1.0.0",
     "karma-tap": "^3.1.1",
-    "node-gyp": "^3.3.1",
     "nyc": "^11.0.2",
     "standard": "*",
     "tape": "^4.5.1",
+    "watchify": "^3.0.0",
     "xorshift.js": "^1.0.3"
   },
   "engines": {
     "node": ">=4.0.0"
   },
-  "gypfile": true,
   "browser": {
     "./index.js": "./elliptic.js"
   }

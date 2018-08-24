@@ -14,13 +14,13 @@ This library is experimental, so use at your own risk. Works on node version 4.0
 
 ##### from npm
 
-`npm install secp256k1-js`
+`npm install secp256k1-pure`
 
 ##### from git
 
 ```
-git clone git@github.com:davidmurdoch/secp256k1-js.git
-cd secp256k1-js
+git clone git@github.com:davidmurdoch/secp256k1-pure.git
+cd secp256k1-pure
 npm install
 ```
 

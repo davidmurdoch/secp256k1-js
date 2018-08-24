@@ -1,13 +1,13 @@
 {
-  "name": "secp256k1-js",
-  "version": "0.0.1",
+  "name": "secp256k1-pure",
+  "version": "3.5.2",
   "description": "This module provides a pure js implementation of secp256k1-node",
   "keywords": [
     "ec",
     "ecdh",
     "ecdsa",
     "secp256k1",
-    "secp256k1-js"
+    "secp256k1-pure"
   ],
   "bugs": {
     "url": "https://github.com/davidmurdoch/secp256k1-js/issues"
